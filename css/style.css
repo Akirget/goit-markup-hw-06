@@ -294,8 +294,7 @@ address {
   letter-spacing: 0.06em;
   cursor: pointer;
 
-  transition: color var(--anim-slow),
-    background-color var(--anim-slow);
+  transition: color var(--anim-slow), background-color var(--anim-slow);
 }
 
 .hero-button:hover,
@@ -646,6 +645,71 @@ address {
   fill: var(--white-color);
 }
 
+/* Раздел подписка */
+
+.footer-subscribe {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 570px;
+  min-height: 86px;
+  margin-left: 93px;
+}
+
+.footer-subscribe-form {
+  display: flex;
+}
+
+.footer-subscribe-text {
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-transform: uppercase;
+  color: var(--white-color);
+}
+
+.footer-subscribe-input {
+  width: 358px;
+  height: 50px;
+
+  color: var(--footer-color-mail);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+
+  font-size: 16px;
+  line-height: calc(20 / 16);
+}
+
+.footer-subscribe-input:focus {
+  outline: transparent;
+}
+
+.footer-subscribe-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-left: 12px;
+
+  min-width: 200px;
+  height: 50px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(30 / 16);
+  letter-spacing: 0.06em;
+
+  color: var(--white-color);
+  background: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-color: transparent;
+}
+
 /*  ---------------------- */
 /* СТИЛИ PORTFOLIO.HTML */
 
@@ -752,7 +816,7 @@ address {
 
 .portfolio-overlay {
   position: absolute;
-  
+
   top: 0;
   left: 0;
 
@@ -816,8 +880,7 @@ address {
   width: 100%;
   height: 100%;
 
-  transition: opacity var(--anim-slow),
-    visibility var(--anim-slow);
+  transition: opacity var(--anim-slow), visibility var(--anim-slow);
 
   background: rgba(0, 0, 0, 0.2);
 }
@@ -856,5 +919,150 @@ address {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
 }
+/* Форма регистрации */
 
+.register-form {
+  padding: 40px;
+}
 
+.register-title {
+  display: block;
+  margin-bottom: 12px;
+
+  font-size: 20px;
+  line-height: calc(23 / 20);
+  text-align: center;
+
+  color: var(--title-text-color);
+}
+
+.register-group {
+  margin-bottom: 20px;
+}
+.register-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.register-wrap:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.register-label {
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  color: var(--primary-text-color);
+}
+
+.register-field {
+  height: 40px;
+  padding: 12px 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: transparent;
+
+  transition: border-color var(--anim-slow);
+}
+
+.register-field:focus {
+  border-color: var(--accent-color);
+}
+
+.register-icon {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+  fill: var(--title-text-color);
+}
+
+.register-field:focus + .register-icon {
+  fill: var(--accent-color);
+}
+
+.register-message {
+  height: 120px;
+  padding: 12px 16px;
+
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: transparent;
+  resize: none;
+
+  transition: border-color var(--anim-slow);
+}
+
+.register-message:focus {
+  border-color: var(--accent-color);
+}
+
+.register-message::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.register-agreement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  margin-bottom: 30px;
+}
+
+.register-checkbox:focus + .register-agreement-icon {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 1px;
+  border-radius: 2px;
+}
+
+.icon-uncheck {
+  opacity: 1;
+  transition: opacity var(--anim-slow);
+}
+
+.register-checkbox:checked + .register-agreement-icon > .icon-uncheck {
+  opacity: 0;
+}
+
+.icon-check {
+  opacity: 0;
+  fill: var(--accent-color);
+
+  transition: opacity var(--anim-slow);
+}
+
+.register-checkbox:checked + .register-agreement-icon > .icon-check {
+  opacity: 1;
+}
+
+.register-agreement-text {
+  font-size: 12px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+
+  user-select: none;
+}
+
+.register-agreement-link {
+  color: var(--accent-color);
+  text-underline-position: under;
+  text-decoration: underline;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: auto;
+  margin-right: auto;
+}
